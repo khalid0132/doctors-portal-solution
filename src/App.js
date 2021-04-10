@@ -5,14 +5,22 @@ import {
   Route,
 } from "react-router-dom";
 import './App.css';
+import Appointment from "./components/Appointment/Appointment/Appointment";
 import Home from "./components/Home/Home/Home";
+
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Home></Home>
+        </Route>
+        {/* <Route path="/">
+          <Home></Home>
+        </Route> */}
+        <Route path="/appointment">
+          <Appointment></Appointment>
         </Route>
       </Switch>
     </Router>
