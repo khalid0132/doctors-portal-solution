@@ -36,7 +36,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
             }
         })
 
-
+ 
         
     }
 
