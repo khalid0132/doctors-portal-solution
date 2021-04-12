@@ -17,13 +17,14 @@ const Login = () => {
   if (firebase.apps.length === 0) {
     firebase.initializeApp(firebaseConfig);
   }
+  var provider = new firebase.auth.GoogleAuthProvider();
 
   const handleGoogleSignIn = () => {
-    var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function (result) {
       const { displayName, email } = result.user;
       const signedInUser = { name: displayName, email }
       setLoggedInUser(signedInUser);
+      // history.replace(from);
       storeAuthToken();
     }).catch(function (error) {
       const errorMessage = error.message;
@@ -59,6 +60,9 @@ const Login = () => {
           <div className="from-group mt-5">
             <button className="btn btn-brand" onClick={handleGoogleSignIn}>Google Sign in</button>
           </div>
+
+          {/* <h3>name: {loggedInUser.displayName}</h3>
+          <h3>E-mail: {loggedInUser.email}</h3> */}
         </div>
         <div className="col-md-6 d-none d-md-block align-self-end">
           <img className="img-fluid" src={LoginBg} alt="" />

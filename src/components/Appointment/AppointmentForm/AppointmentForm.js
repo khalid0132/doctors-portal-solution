@@ -19,6 +19,8 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
     const { register, handleSubmit, errors } = useForm();
     
     const onSubmit = data => {
+        // console.log(data);
+        // closeModal();
         data.service = appointmentOn;
         data.date = date;
         data.created = new Date();
@@ -36,7 +38,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
             }
         })
 
-
+ 
         
     }
 
@@ -53,22 +55,23 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
                 <p className="text-secondary text-center"><small>ON {date.toDateString()}</small></p>
                 <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-group">
-                        <input type="text" ref={register({ required: true })} name="name" placeholder="Your Name" className="form-control" />
+                        <p><input type="text" {...register("name", { required: true })} name="name" placeholder="Your Name" className="form-control" /></p>
                         {errors.name && <span className="text-danger">This field is required</span>}
 
                     </div>
                     <div className="form-group">
-                        <input type="text" ref={register({ required: true })} name="phone" placeholder="Phone Number" className="form-control" />
+                        <p><input type="text" {...register("phone", { required: true })} name="phone" placeholder="Phone Number" className="form-control" /></p>
                         {errors.phone && <span className="text-danger">This field is required</span>}
                     </div>
                     <div className="form-group">
-                        <input type="text" ref={register({ required: true })} name="email" placeholder="Email" className="form-control" />
+                        <p><input type="text" {...register("email", { required: true })} name="email" placeholder="Email" className="form-control" /></p>
                         {errors.email && <span className="text-danger">This field is required</span>}
                     </div>
+                   
                     <div className="form-group row">
                         <div className="col-4">
 
-                            <select className="form-control" name="gender" ref={register({ required: true })} >
+                            <select className="form-control" name="gender" {...register("gender",{ required: true })} >
                                 <option disabled={true} value="Not set">Select Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
@@ -78,17 +81,17 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
 
                         </div>
                         <div className="col-4">
-                            <input ref={register({ required: true })} className="form-control" name="age" placeholder="Your Age" type="number" />
+                            <input {...register("age", { required: true })} className="form-control" name="age" placeholder="Your Age" type="number" />
                             {errors.age && <span className="text-danger">This field is required</span>}
                         </div>
                         <div className="col-4">
-                            <input ref={register({ required: true })} className="form-control" name="weight" placeholder="Weight" type="number" />
+                            <input {...register("weight",{ required: true })} className="form-control" name="weight" placeholder="Weight" type="number" />
                             {errors.weight && <span className="text-danger">This field is required</span>}
                         </div>
                     </div>
-
+                     <br/>
                     <div className="form-group text-right">
-                        <button type="submit" className="btn btn-brand">Send</button>
+                       <p> <button type="submit" className="btn btn-brand">Send</button></p>
                     </div>
                 </form>
             </Modal>

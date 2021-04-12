@@ -22,7 +22,7 @@ const AddDoctor = () => {
         formData.append('name', info.name);
         formData.append('email', info.email);
 
-        fetch('https://salty-plateau-71286.herokuapp.com/addADoctor', {
+        fetch('http://localhost:5000/addADoctor', {
             method: 'POST',
             body: formData
         })
