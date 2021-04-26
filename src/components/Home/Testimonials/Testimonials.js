@@ -30,11 +30,11 @@ const Testimonials = () => {
     return (
         <section className="testimonials my-5 py-5">
             <div className="container">
-                <div className="section-header">
+                <div className="section-header text-center">
                     <h5 className="text-primary uppercase">Testimonial</h5>
                     <h1>What's Our Patients <br/>Says</h1>
                 </div>
-                <div className="card mt-5">
+                <div className="w-100 row mt-5 pt-5">
                     {
                         testimonialData.map(testimonial => <Testimonial testimonial={testimonial} key={testimonial.name}></Testimonial>)
                     }
