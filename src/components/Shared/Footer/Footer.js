@@ -13,7 +13,7 @@ const Footer = () => {
         {name: "Check Up" , link: "/checkup"},
     ]
     const ourAddress = [
-        {name: "New York - 101010 Hudson" , link: "//google.com/map"},
+        {name: "Visättravägen - 14150 Huddinge" , link: "//google.com/map"},
         {name: "Yards" , link: "//google.com/map"},
        
     ]

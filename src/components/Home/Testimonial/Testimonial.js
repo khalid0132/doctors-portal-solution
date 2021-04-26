@@ -27,8 +27,9 @@ const Testimonial = ({testimonial}) => {
     const {quote, name, from, img} = testimonial;
     return (
         <Card style={{ width: '18rem' }} className="container mb-4 mt-4" >
-        <Card.Img variant="top" src={img} width="30px" height="25%" />
+        {/* <Card.Img variant="top" src={img} height="100px" /> */}
         <Card.Body>
+            <img className="mx-3" src={img} alt="" width="60"/>
             <Card.Title className="text-center">{name}</Card.Title>
             <Card.Title className="text-center">{from}</Card.Title>
             <Card.Text className="font-weight-bold">{quote}</Card.Text>
